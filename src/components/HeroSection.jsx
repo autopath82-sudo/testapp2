@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 
 const HeroSection = () => {
   const controls = useAnimation();
@@ -12,11 +11,19 @@ const HeroSection = () => {
       y: 0,
       transition: { duration: 1.5, ease: 'easeOut' },
     });
+
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      document.querySelector('.parallax-bg').style.backgroundPositionY = `${scrollY * 0.5}px`;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [controls]);
 
   return (
     <motion.section
-      className="relative w-full h-screen bg-cover bg-center"
+      className="relative w-full h-screen bg-cover bg-center parallax-bg"
       style={{ backgroundImage: "url('/path/to/coffee-background.jpg')" }}
       initial={{ opacity: 0, y: 50 }}
       animate={controls}
@@ -42,13 +49,13 @@ const HeroSection = () => {
         <div className="flex space-x-4">
           <Link
             to="/menu"
-            className="bg-gold-500 hover:bg-gold-600 text-brown-900 font-semibold py-2 px-4 rounded-lg transition duration-300"
+            className="bg-gold-500 hover:bg-gold-600 text-brown-900 font-semibold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105"
           >
             Explore Menu
           </Link>
           <Link
             to="/visit"
-            className="bg-gold-300 hover:bg-gold-400 text-brown-900 font-semibold py-2 px-4 rounded-lg transition duration-300"
+            className="bg-gold-300 hover:bg-gold-400 text-brown-900 font-semibold py-2 px-4 rounded-lg transition duration-300 transform hover:scale-105"
           >
             Visit Us
           </Link>
