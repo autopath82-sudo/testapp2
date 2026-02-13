@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import HeroSection from './components/HeroSection';
 import AboutUs from './pages/AboutUs';
-import Menu from './pages/Menu';
+import MenuPage from './pages/MenuPage';
 import Visit from './pages/Visit';
 import ContactUs from './pages/ContactUs';
 import getEnvironmentConfig from './config/environment';
@@ -29,7 +29,7 @@ function App() {
         </motion.header>
         <Routes>
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/menu" element={<Menu />} />
+          <Route path="/menu" element={<MenuPage />} />
           <Route path="/visit" element={<Visit />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />

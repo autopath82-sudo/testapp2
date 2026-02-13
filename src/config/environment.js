@@ -1,7 +1,7 @@
 const environments = {
   development: {
-    apiUrl: 'http://localhost:3000/api',
-    debug: true,
+    apiUrl: process.env.REACT_APP_DEV_API_URL ?? 'http://localhost:3000/api',
+    debug: process.env.REACT_APP_DEV_DEBUG === 'true',
     theme: {
       colors: {
         brown: {
@@ -34,8 +34,8 @@ const environments = {
     },
   },
   production: {
-    apiUrl: 'https://api.roastandrelax.com',
-    debug: false,
+    apiUrl: process.env.REACT_APP_PROD_API_URL ?? 'https://api.roastandrelax.com',
+    debug: process.env.REACT_APP_PROD_DEBUG === 'true',
     theme: {
       colors: {
         brown: {
@@ -68,8 +68,8 @@ const environments = {
     },
   },
   test: {
-    apiUrl: 'http://localhost:3000/api',
-    debug: true,
+    apiUrl: process.env.REACT_APP_TEST_API_URL ?? 'http://localhost:3000/api',
+    debug: process.env.REACT_APP_TEST_DEBUG === 'true',
     theme: {
       colors: {
         brown: {
