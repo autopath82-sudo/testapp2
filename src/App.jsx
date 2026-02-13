@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import HeroSection from './components/HeroSection';
 import AboutUs from './pages/AboutUs';
 import MenuPage from './pages/MenuPage';
-import Visit from './pages/Visit';
+import VisitPage from './pages/VisitPage';
 import ContactUs from './pages/ContactUs';
 import getEnvironmentConfig from './config/environment';
 
@@ -30,7 +30,7 @@ function App() {
         <Routes>
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/menu" element={<MenuPage />} />
-          <Route path="/visit" element={<Visit />} />
+          <Route path="/visit" element={<VisitPage />} />
           <Route path="/contact-us" element={<ContactUs />} />
           <Route path="/about" element={<AboutUs />} />
           <Route path="/contact" element={<ContactUs />} />

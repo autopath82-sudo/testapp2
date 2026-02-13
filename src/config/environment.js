@@ -101,6 +101,40 @@ const environments = {
       },
     },
   },
+  staging: {
+    apiUrl: process.env.REACT_APP_STAGING_API_URL ?? 'https://staging.api.roastandrelax.com',
+    debug: process.env.REACT_APP_STAGING_DEBUG === 'true',
+    theme: {
+      colors: {
+        brown: {
+          900: '#4E342E',
+        },
+        cream: '#FFFDD0',
+        beige: '#F5F5DC',
+        gold: {
+          500: '#FFD700',
+          600: '#FFC107',
+          300: '#FFECB3',
+          400: '#FFD54F',
+        },
+      },
+      typography: {
+        fontFamily: {
+          serif: ['Merriweather', 'serif'],
+          sans: ['Open Sans', 'sans-serif'],
+        },
+        fontSize: {
+          base: '16px',
+          lg: '18px',
+          xl: '20px',
+          '2xl': '24px',
+          '3xl': '30px',
+          '4xl': '36px',
+          '5xl': '48px',
+        },
+      },
+    },
+  },
 };
 
 const getEnvironmentConfig = () => {
