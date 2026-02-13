@@ -2,6 +2,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import coffeeImage from '../assets/coffee.jpg';
 import MenuItem from '../components/MenuItem';
+import getEnvironmentConfig from '../config/environment';
+
+const { theme } = getEnvironmentConfig();
 
 const MenuPage = () => {
   const menuItems = [
@@ -20,7 +23,12 @@ const MenuPage = () => {
       transition={{ duration: 0.5, ease: 'easeOut' }}
       aria-label="Menu Page"
     >
-      <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center" aria-label="Menu Heading">Our Menu</h2>
+      <h2
+        className={`text-3xl font-bold ${theme.typography.fontFamily.serif} text-${theme.colors.brown[900]} mb-6 text-center`}
+        aria-label="Menu Heading"
+      >
+        Our Menu
+      </h2>
       <section className="flex flex-col md:flex-row items-center justify-between mb-8">
         <motion.img
           src={coffeeImage}
@@ -36,7 +44,10 @@ const MenuPage = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <p className="text-lg text-gray-700 leading-relaxed" aria-label="Menu Description">
+          <p
+            className={`text-lg ${theme.typography.fontFamily.sans} text-gray-700 leading-relaxed`}
+            aria-label="Menu Description"
+          >
             Discover our selection of freshly brewed coffee and delightful beverages. Each cup is crafted with care to provide you with the perfect coffee experience.
           </p>
         </motion.div>
